@@ -26,7 +26,7 @@ li {
 
 .d {
     background-color: #3cb371;
-    /* font-size: 72px; */
+    font-size: 72px;
 }
 
 .e {
@@ -36,3 +36,32 @@ li {
 .f {
     background-color: #9370db;
 }
+
+/* by default flexbox responds to the content and their natural width first, 
+then it distributes the leftover space on the row*/
+/*Flex items are the width of the content inside them */
+
+ul.flex {
+    display: flex;
+    
+    /* justify content deals with the left over space on the main axis (horizontal) of the row */
+    /* align items distributes sapce on the cross axis (vertical) the tallest item defines the height for the row, by deffault all items will stretch to fit. goes on the parent container*/
+
+    justify-content: flex-start; /* default property */
+    justify-content: flex-end; /* moves all flex items to the end of the row, moves all left over space to the beginning of the row */
+    justify-content: center; /* moves flex items to the center of the row, moves left over space, equally, to the beginning and end of the row */
+    justify-content: space-between; /* takes the left over space and distributes evenlly between each flex item */
+    justify-content: space-around; /* distributes the left over space and puts is on the left and right of each flex item */
+    /*justify-content: space-evenly;  does the same as sapce-around, but a little more evenly */
+
+    align-items: stretch; /* default property */
+    align-items: flex-start; /* items are defined by their default height (content) and start at the top of the row */
+    align-items: flex-end; /* items are defined by their default height (content) and start from the bottom of the row */
+    align-items: center; /* if an item is taller than the others in the row, then left over space is distributed on the top and bottom of all other items */
+    align-items: baseline; /* similar to center, baseline centers the text of the elements */
+
+    /* shorthand property that can be used for both justify-content and align-items */
+    place-items: baseline center; /* first value is align-items (top to bottom) and the second is justify-content (left to right) */
+}
+
+
